@@ -14,12 +14,14 @@ public class LoginTest {
     private String passwordStr = "secret_sauce";
     private String uri = "https://www.saucedemo.com/";
 
+//test 1,2,3,4,5,6,7 are the test cases for the login page accurate long code to sipmle code
+
     @Test(priority = 1)
     public void validLoginTestWithoutPageObjectModel() throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.get(uri);
         driver.manage().window().maximize();
-        Thread.sleep(5000);
+        Thread.sleep(2000);
 
         WebElement userName = driver.findElement(By.id("user-name"));
         WebElement password = driver.findElement(By.id("password"));
@@ -43,7 +45,7 @@ public class LoginTest {
     public void validLoginTestWithPageObjectModel() throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.get(uri);
-        driver.manage().window().maximize();
+        driver.manage().window().maximize(); // window set as full screen mode
         Thread.sleep(5000);
 
         LoginPage loginPage = new LoginPage(driver);
@@ -59,6 +61,8 @@ public class LoginTest {
         driver.get(uri);
         driver.manage().window().maximize();
         Thread.sleep(5000);
+
+// loginpage and homepage are the objects of the class LoginPage and HomePage in the inside the src 
 
         LoginPage loginPage = new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
